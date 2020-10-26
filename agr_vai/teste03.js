@@ -1,10 +1,9 @@
-const express = require(express);
+var http = require('http');
 
-const app = express();
+//Create a server 
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the browser
+  res.end(); //end the response
+}).listen(8080); 
 
-app.get("/", (request, response) =>{
-    return response("hello world");
-})
-console.log("teste");
-console.log("teste 2");
-app.listen(3333);
+console.log('Server started');
